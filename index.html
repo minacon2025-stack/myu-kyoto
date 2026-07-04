@@ -563,50 +563,7 @@
   </a>
 </nav>
 
-<!-- Sakura emoji rain -->
-<div id="sakura-container" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;overflow:hidden;"></div>
-<script>
-(function(){
-  const container = document.getElementById('sakura-container');
-  const COUNT = 25;
 
-  function createPetal() {
-    const el = document.createElement('div');
-    const size = 14 + Math.random() * 18;
-    const left = Math.random() * 100;
-    const duration = 7 + Math.random() * 8;
-    const delay = Math.random() * 12;
-    const sway = 30 + Math.random() * 60;
-
-    el.textContent = '🌸';
-    el.style.cssText = `
-      position:absolute;
-      font-size:${size}px;
-      left:${left}%;
-      top:-60px;
-      opacity:0;
-      animation: sakuraFall ${duration}s ${delay}s linear infinite;
-      --sway: ${sway}px;
-    `;
-    container.appendChild(el);
-  }
-
-  // Inject keyframes
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes sakuraFall {
-      0%   { transform: translateY(0) translateX(0) rotate(0deg);   opacity: 0; }
-      5%   { opacity: 1; }
-      50%  { transform: translateY(50vh) translateX(var(--sway)) rotate(180deg); opacity: 0.85; }
-      95%  { opacity: 0.6; }
-      100% { transform: translateY(105vh) translateX(0px) rotate(360deg); opacity: 0; }
-    }
-  `;
-  document.head.appendChild(style);
-
-  for (let i = 0; i < COUNT; i++) createPetal();
-})();
-</script>
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -710,6 +667,11 @@
         <h3>Kimono Dressing & Childcare</h3>
         <p>Get dressed in a beautiful kimono and create stunning Kyoto memories — childcare included on request.</p>
       </div>
+      <div class="spotlight-card">
+        <div class="spotlight-icon">🏺</div>
+        <h3>Pottery Experience Coordination</h3>
+        <p>Let Myu arrange and accompany you to an authentic Kyoto pottery studio for a hands-on ceramic experience.</p>
+      </div>
     </div>
 
     <!-- Pricing cards -->
@@ -739,6 +701,7 @@
         <p class="price-note">
           Minimum booking: 2 hours<br>
           Standard hours: 10:00–17:00<br>
+          Available from 1 year old 👶<br>
           Other times? Feel free to ask! 🌸
         </p>
       </div>
@@ -778,38 +741,27 @@
           Master-certified dressing by Ichida Hiromi Academy graduate. Look stunning for your Kyoto stroll! 🌸
         </p>
       </div>
+
+      <!-- Pottery -->
+      <div class="price-card">
+        <div class="price-card-header">
+          <span class="price-icon">🏺</span>
+          <h3>Pottery Experience</h3>
+        </div>
+        <div class="price-row">
+          <span>Price</span>
+          <strong>Upon request</strong>
+        </div>
+        <p class="price-note">
+          Myu will coordinate and accompany you to an authentic Kyoto pottery studio.<br><br>
+          Please get in touch for details and availability! 🌸
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews">
-  <div class="container">
-    <span class="section-label">Reviews</span>
-    <h2 class="section-title">What Guests Say</h2>
-    <div class="section-line"></div>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Myu was absolutely wonderful with our two children. We were able to enjoy a full day in Kyoto without worry. She's warm, professional, and the kids adored her!</p>
-        <div class="review-author">Sarah M.</div>
-        <div class="review-from">🇦🇺 Australia</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">The tea ceremony was a highlight of our Japan trip. Myu explained every step with such care and warmth. Highly recommend combining it with the kimono dressing!</p>
-        <div class="review-author">Claire & Thomas</div>
-        <div class="review-from">🇫🇷 France</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Getting dressed in kimono by Myu was magical. She's a true professional — patient, kind, and talented. Our photos from the streets of Kyoto are breathtaking.</p>
-        <div class="review-author">Emily R.</div>
-        <div class="review-from">🇺🇸 USA</div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- CONTACT -->
 <section id="contact">
